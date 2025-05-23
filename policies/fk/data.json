@@ -1,0 +1,12 @@
+{
+  "roles": ["accountant", "manager", "auditor"],
+  "assignments": {
+    "tenantA": {
+      "user123": ["accountant"],
+      "user999": ["manager"]
+    },
+    "tenantB": {
+      "user888": ["auditor"]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "alias_to_id": {
+    "tenant-A-CRM": "tenantA",
+    "tenant-A-HR": "tenantA"
+  }
+}

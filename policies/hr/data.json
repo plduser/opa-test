@@ -1,0 +1,8 @@
+{
+  "roles": ["hr_manager", "recruiter"],
+  "assignments": {
+    "tenantA": {
+      "user999": ["hr_manager"]
+    }
+  }
+}
