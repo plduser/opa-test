@@ -11,6 +11,5 @@ allow {
 }
 
 has_role(role) {
-  some r
   data.fk.assignments[input.tenant_id][input.user_id][_] == role
 }
