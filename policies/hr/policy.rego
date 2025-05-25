@@ -1,4 +1,4 @@
-package policies.hr.policy
+package hr.policy
 
 allow if {
   input.action == "approve_leave"

@@ -1,4 +1,4 @@
-package policies.fk.policy
+package fk.policy
 
 allow if {
   input.action == "view_invoice"
