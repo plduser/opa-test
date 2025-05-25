@@ -6,10 +6,10 @@ default allow = false
 
 allow if {
   input.app == "fk"
-  data.policies.fk.policy.allow
+  data.fk.policy.allow with input as input
 }
 
 allow if {
   input.app == "hr"
-  data.policies.hr.policy.allow
+  data.hr.policy.allow with input as input
 }

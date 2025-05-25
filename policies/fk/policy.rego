@@ -13,5 +13,5 @@ allow if {
 }
 
 has_role(role) if {
-  data.policies.fk.assignments[input.tenant_id][input.user_id][_] == role
+  data.fk.assignments[input.tenant_id][input.user_id][_] == role
 }
