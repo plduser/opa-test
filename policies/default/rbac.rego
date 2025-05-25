@@ -1,5 +1,7 @@
 package policies.common.rbac
 
+import rego.v1
+
 is_admin(user_id, tenant_id) if {
   data.policies.common.rbac.admins[tenant_id][_] == user_id
 }

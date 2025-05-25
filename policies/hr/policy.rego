@@ -1,5 +1,7 @@
 package hr.policy
 
+import rego.v1
+
 allow if {
   input.action == "approve_leave"
   has_role("hr_manager")

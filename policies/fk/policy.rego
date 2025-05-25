@@ -1,5 +1,7 @@
 package fk.policy
 
+import rego.v1
+
 allow if {
   input.action == "view_invoice"
   has_role("accountant")
