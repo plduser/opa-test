@@ -1,4 +1,4 @@
-package fk.policy
+package policies.fk.policy
 
 allow {
   input.action == "view_invoice"
@@ -11,5 +11,5 @@ allow {
 }
 
 has_role(role) {
-  data.fk.assignments[input.tenant_id][input.user_id][_] == role
+  data.policies.fk.assignments[input.tenant_id][input.user_id][_] == role
 }
