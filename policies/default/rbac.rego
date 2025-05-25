@@ -1,4 +1,4 @@
-package policies.default.rbac
+package policies.def.rbac
 
 # Można np. zdefiniować rolę nadrzędną
 is_admin(user_id, tenant_id) {
