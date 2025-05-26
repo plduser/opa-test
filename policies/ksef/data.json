@@ -1,22 +1,12 @@
 {
-  "roles": [
-    "ksiegowa",
-    "handlowiec",
-    "zakupowiec",
-    "administrator",
-    "wlasciciel_ka"
-  ],
+  "roles": ["ksiegowa", "handlowiec", "administrator", "zakupowiec", "wlasciciel"],
   "assignments": {
     "tenantA": {
-      "user123": [
-        "ksiegowa"
-      ],
-      "user456": [
-        "handlowiec"
-      ],
-      "user789": [
-        "administrator"
-      ]
+      "user123": ["ksiegowa"],
+      "user456": ["handlowiec"],
+      "user789": ["administrator"],
+      "user555": ["zakupowiec"],
+      "user999": ["wlasciciel"]
     }
   }
 }

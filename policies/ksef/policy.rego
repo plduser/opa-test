@@ -9,7 +9,7 @@ allow if {
 
 allow if {
 	input.action == "zarzadzanie_kontrahentami"
-	has_role("ksiegowa")
+	has_role_cmn("ksiegowa")
 }
 
 allow if {
