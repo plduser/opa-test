@@ -16,6 +16,6 @@ has_any_role(user_id, tenant_id, roles) if {
 }
 
 has_role_cmn(role) if {
-	some r in data.policies.[input.app].assignments[input.tenant_id][input.user_id]
+	some r in data.policies[input.app].assignments[input.tenant_id][input.user_id]
 	r == role
 }
