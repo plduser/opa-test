@@ -21,6 +21,7 @@ has_role_cmn(role) = true if {
 }
 
 has_role_cmn(role) = false if {
-  not some r in data.policies[input.app].assignments[input.tenant_id][input.user_id]
-  r == role
+  not some r in data.policies[input.app].assignments[input.tenant_id][input.user_id] {
+    r == role
+  }
 }
