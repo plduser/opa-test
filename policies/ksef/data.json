@@ -1,0 +1,22 @@
+{
+  "roles": [
+    "ksi_gowa",
+    "handlowiec",
+    "zakupowiec",
+    "administrator",
+    "w_a_ciciel_k_a_"
+  ],
+  "assignments": {
+    "tenantA": {
+      "user123": [
+        "ksiegowa"
+      ],
+      "user456": [
+        "handlowiec"
+      ],
+      "user789": [
+        "administrator"
+      ]
+    }
+  }
+}
