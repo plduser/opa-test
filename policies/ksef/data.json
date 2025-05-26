@@ -1,10 +1,10 @@
 {
   "roles": [
-    "ksi_gowa",
+    "ksiegowa",
     "handlowiec",
     "zakupowiec",
     "administrator",
-    "w_a_ciciel_k_a_"
+    "wlasciciel_ka"
   ],
   "assignments": {
     "tenantA": {
