@@ -14,3 +14,8 @@ has_any_role(user_id, tenant_id, roles) if {
   some i
   user_has_role(user_id, tenant_id, roles[i])
 }
+
+has_role_cmn(role) if {
+	some r in data.policies.[input.app].assignments[input.tenant_id][input.user_id]
+	r == role
+}

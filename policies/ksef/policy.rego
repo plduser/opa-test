@@ -1,7 +1,7 @@
 package ksef.policy
 
 import rego.v1
-import data.main as common
+import policies.common.rbac as rbac
 
 allow if {
 	input.action == "zmiana_ustawien_ksef"
@@ -10,7 +10,7 @@ allow if {
 
 allow if {
 	input.action == "zarzadzanie_kontrahentami"
-	common.has_role_cmn("ksiegowa")
+	rbac.has_role_cmn("ksiegowa")
 }
 
 allow if {
