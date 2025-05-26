@@ -1,7 +1,7 @@
 package ksef.policy
 
 import rego.v1
-import policies.common.rbac as rbac
+import data.policies.common.rbac as rbac
 
 allow if {
 	input.action == "zmiana_ustawien_ksef"
