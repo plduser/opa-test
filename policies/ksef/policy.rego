@@ -283,7 +283,7 @@ allow if {
 	has_role("własciciel_ka")
 }
 
-has_role(role) = true if {
+has_role(role) if {
 	some r in data.policies.ksef.assignments[input.tenant_id][input.user_id]
 	r == role
 }
