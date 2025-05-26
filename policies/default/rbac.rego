@@ -15,8 +15,11 @@ has_any_role(user_id, tenant_id, roles) if {
   user_has_role(user_id, tenant_id, roles[i])
 }
 
-has_role_cmn(role) = result if {
-  result := false
+has_role_cmn(role) = true if {
   some r in data.policies[input.app].assignments[input.tenant_id][input.user_id]
-  result := r == role
+  r == role
+}
+
+has_role_cmn(_) = false if {
+  not has_role_cmn(_)
 }
