@@ -1,6 +1,7 @@
 package ksef.policy
 
 import rego.v1
+import data.default.main as common
 
 allow if {
 	input.action == "zmiana_ustawien_ksef"
@@ -9,7 +10,7 @@ allow if {
 
 allow if {
 	input.action == "zarzadzanie_kontrahentami"
-	has_role_cmn("ksiegowa")
+	has_role_common("ksiegowa")
 }
 
 allow if {
