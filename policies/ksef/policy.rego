@@ -1,7 +1,7 @@
 package ksef.policy
 
 import rego.v1
-import data.default.main as common
+import data.main as common
 
 allow if {
 	input.action == "zmiana_ustawien_ksef"
