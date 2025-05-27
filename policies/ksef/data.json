@@ -1,5 +1,13 @@
 {
-  "roles": ["ksiegowa", "handlowiec", "administrator", "zakupowiec", "wlasciciel"],
+  "roles": {
+    "ksiegowa": [],
+    "handlowiec": [],
+    "administrator": [],
+    "zakupowiec": [],
+    "wlasciciel": [],
+    "ksef_sender": ["send_invoice"],
+    "ksef_viewer": ["view_ksef_status"]
+  },
   "assignments": {
     "tenantA": {
       "user123": [

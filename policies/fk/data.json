@@ -1,12 +1,8 @@
 {
-  "roles": ["accountant", "manager", "auditor"],
+  "roles": {
+    "accountant": ["view_invoice"],
+    "manager": ["approve_payment", "view_invoice"],
+    "auditor": []
+  },
   "assignments": {
-    "tenantA": {
-      "user123": ["accountant"],
-      "user999": ["manager"]
-    },
-    "tenantB": {
-      "user888": ["auditor"]
-    }
-  }
-}
+    "tenant

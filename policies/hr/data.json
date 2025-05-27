@@ -1,5 +1,8 @@
 {
-  "roles": ["hr_manager", "recruiter"],
+  "roles": {
+    "hr_staff": ["view_employee"],
+    "hr_manager": ["manage_salary", "view_employee"]
+  },
   "assignments": {
     "tenantA": {
       "user999": ["hr_manager"]
