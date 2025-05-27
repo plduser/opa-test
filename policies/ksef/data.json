@@ -1,10 +1,10 @@
 {
   "roles": {
-    "ksiegowa": [],
-    "handlowiec": [],
-    "administrator": [],
-    "zakupowiec": [],
-    "wlasciciel": [],
+    "ksiegowa": ["view_ksef_status", "send_invoice"],
+    "handlowiec": ["view_ksef_status"],
+    "administrator": ["view_ksef_status", "send_invoice"],
+    "zakupowiec": ["view_ksef_status"],
+    "wlasciciel": ["view_ksef_status", "send_invoice"],
     "ksef_sender": ["send_invoice"],
     "ksef_viewer": ["view_ksef_status"]
   },
@@ -20,5 +20,12 @@
         "administrator"
       ]
     }
+  },
+  "users": {
+    "user123": {
+      "roles": ["ksef_sender", "ksef_viewer"],
+      "authenticated": true
+    }
   }
 }
+
