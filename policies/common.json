@@ -1,0 +1,16 @@
+{
+  "users": {
+    "alice": {
+      "roles": ["ksef_sender"],
+      "authenticated": true
+    },
+    "bob": {
+      "roles": ["ksef_viewer"],
+      "authenticated": true
+    },
+    "charlie": {
+      "roles": [],
+      "authenticated": true
+    }
+  }
+}
