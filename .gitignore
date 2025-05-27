@@ -1,0 +1,25 @@
+# macOS system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Docker runtime
+*.pid
+
+# VS Code & JetBrains
+.vscode/
+.idea/
+
+# Env files
+.env
+.env.*
+
+# Test artifacts
+tests/output/
+
+# Local data/bundle directories
+docker/opa/data/
+docker/opa/bundles/
+
