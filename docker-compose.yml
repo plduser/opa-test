@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  broadcast_channel:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  opal_server:
+    image: permitio/opal-server:latest
+    ports:
+      - "7002:7002"
+    volumes:
+      - ./data-config.json:/data-config.json
+    environment:
+      - OPAL_BROADCAST_URI=postgres://postgres:postgres@broadcast_channel:5432/postgres
+      - OPAL_POLICY_REPO_URL=https://github.com/plduser/opa-test.git
+      # - OPAL_POLICY_REPO_MAIN_BRANCH=main
+      - OPAL_POLICY_REPO_MAIN_BRANCH=feature/new-rbac-rules
+      - OPAL_POLICY_REPO_PATH=.
+      - OPAL_POLICY_REPO_POLLING_INTERVAL=30
+      - DATA_CONFIG_SOURCES_FILE_PATH=/data-config.json
+      - DATA_CONFIG_ENABLED=true
+      - LOG_LEVEL=DEBUG
+
+  opal_client_fk:
+    image: permitio/opal-client:latest
+    depends_on:
+      - opal_server
+    environment:
+      - OPAL_SERVER_URL=http://opal_server:7002
+      - OPAL_CLIENT_ID=client-fk
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=policies/fk:policies/default
+      - OPAL_OPA_SERVER_URL=http://localhost:8181
+      - LOG_LEVEL=DEBUG
+    ports:
+      - "8181:8181"
+
+  opal_client_hr:
+    image: permitio/opal-client:latest
+    depends_on:
+      - opal_server
+    environment:
+      - OPAL_SERVER_URL=http://opal_server:7002
+      - OPAL_CLIENT_ID=client-hr
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=policies/hr:policies/default
+      - OPAL_OPA_SERVER_URL=http://localhost:8181
+      - LOG_LEVEL=DEBUG
+    ports:
+    - "8182:8181"
+
+  opal_client_ksef:
+    image: permitio/opal-client:latest
+    depends_on:
+      - opal_server
+    environment:
+      - OPAL_SERVER_URL=http://opal_server:7002
+      - OPAL_CLIENT_ID=client-ksef
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=policies/ksef:policies/default
+      - OPAL_OPA_SERVER_URL=http://localhost:8181
+      - LOG_LEVEL=DEBUG
+    ports:
+    - "8183:8181"

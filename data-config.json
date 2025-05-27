@@ -1,0 +1,41 @@
+{
+  "entries": [
+    {
+      "url": "policies/fk/data.json",
+      "topics": ["policy_data"],
+      "dest": "policies/fk"
+    },
+    {
+      "url": "policies/hr/data.json",
+      "topics": ["policy_data"],
+      "dest": "policies/hr"
+    },
+    {
+      "url": "policies/ksef/data.json",
+      "topics": ["policy_data"],
+      "dest": "policies/ksef"
+    }
+  ],
+  "sources": {
+    "base": {
+      "type": "static",
+      "data": {
+        "tenants": {
+          "tenantA": {}
+        }
+      }
+    },
+    "policy_data": {
+      "type": "dynamic",
+      "sources": ["entries"]
+    }
+  },
+  "topics": {
+    "tenant_data": {
+      "sources": ["base"]
+    },
+    "policy_data": {
+      "sources": ["policy_data"]
+    }
+  }
+}
