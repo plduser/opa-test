@@ -7,14 +7,14 @@ import data.tenants
 # KSEF-specific rules
 default allow := false
 
-allow {
+allow if {
     common.is_authenticated
     tenants.valid_tenant
     input.action == "send_invoice"
     common.has_role("ksef_sender")
 }
 
-allow {
+allow if {
     common.is_authenticated
     tenants.valid_tenant
     input.action == "view_ksef_status"
