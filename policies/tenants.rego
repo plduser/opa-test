@@ -16,8 +16,7 @@ tenants := {
 
 # Alias mappings
 alias_to_id := {
-	"tenant-A-CRM": "3d2dea4a-9bdd-4444-9c67-4b46d1394628",
-	"tenant-A-HR": "3d2dea4a-9bdd-4444-9c67-4b46d1394628",
+	"tenantA": "3d2dea4a-9bdd-4444-9c67-4b46d1394628"
 }
 
 # Helper rule to resolve tenant ID from either direct ID or alias
