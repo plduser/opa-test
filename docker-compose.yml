@@ -23,12 +23,13 @@ services:
       # - OPAL_POLICY_REPO_MAIN_BRANCH=main
       - OPAL_POLICY_REPO_MAIN_BRANCH=feature/new-rbac-rules
       - OPAL_POLICY_REPO_PATH=/policies
-      - OPAL_POLICY_REPO_POLLING_INTERVAL=10  # zmniejszamy interwał dla szybszego wykrywania zmian
+      - OPAL_POLICY_REPO_POLLING_INTERVAL=20  # zmniejszamy interwał dla szybszego wykrywania zmian
       - OPAL_LOG_FORMAT_INCLUDE_PID=true      # lepsze logowanie
       - DATA_CONFIG_SOURCES_FILE_PATH=/data-config.json
       - DATA_CONFIG_ENABLED=true
       - LOG_LEVEL=DEBUG
       - DATA_CONFIG_SOURCES=file:///data-config.json
+      - TZ=Europe/Warsaw
 
   opal_client_fk:
     container_name: opa-test-opal_client_fk-1
@@ -38,9 +39,10 @@ services:
     environment:
       - OPAL_SERVER_URL=http://opal_server:7002
       - OPAL_CLIENT_ID=client-fk
-      - OPAL_POLICY_SUBSCRIPTION_DIRS=/policies/fk:/policies/default
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=/policies/fk:/policies/default:/policies/common
       - OPAL_OPA_SERVER_URL=http://opa-test-opal_client_fk-1:8181
       - LOG_LEVEL=DEBUG
+      - TZ=Europe/Warsaw
     ports:
       - "8181:8181"
 
@@ -52,9 +54,10 @@ services:
     environment:
       - OPAL_SERVER_URL=http://opal_server:7002
       - OPAL_CLIENT_ID=client-hr
-      - OPAL_POLICY_SUBSCRIPTION_DIRS=/policies/hr:/policies/default
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=/policies/hr:/policies/default:/policies/common
       - OPAL_OPA_SERVER_URL=http://opa-test-opal_client_hr-1:8181
       - LOG_LEVEL=DEBUG
+      - TZ=Europe/Warsaw
     ports:
     - "8182:8181"
 
@@ -66,8 +69,9 @@ services:
     environment:
       - OPAL_SERVER_URL=http://opal_server:7002
       - OPAL_CLIENT_ID=client-ksef
-      - OPAL_POLICY_SUBSCRIPTION_DIRS=/policies/ksef:/policies/default
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=/policies/ksef:/policies/default:/policies/common
       - OPAL_OPA_SERVER_URL=http://opa-test-opal_client_ksef-1:8181
       - LOG_LEVEL=DEBUG
+      - TZ=Europe/Warsaw
     ports:
     - "8183:8181"

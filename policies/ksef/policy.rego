@@ -20,4 +20,5 @@ allow if {
     input.action == "view_ksef_status"
     common.has_role("ksef_viewer")
 }
+# Przykładowe requesty curl do testowania polityk KSEF
 
